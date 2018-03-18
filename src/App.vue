@@ -1,22 +1,27 @@
 <template>
     <div class="container">
-        <div class="div">
-            <ul>
-                <li v-for="quote in quotes" :key="quote.id">{{ quote }}</li>
-            </ul>
-        </div>
+        <p>This is main App parent</p>
+        <app-quote-grid :quotes="quotes"></app-quote-grid>
     </div>
 </template>
 
 <script>
-    export default {
-        data() {
-            return {
-                quotes: [ "I'm a Potato ! :3", "Hello, me too ! :)" ],
-                maxQuotes: 10
-            }
-        }
+  import QuoteGrid from './components/QuoteGrid.vue'
+
+  export default {
+    data() {
+      return {
+        quotes: [
+          "I'm a Potato ! :3",
+          "Hello, me too ! :D"
+        ],
+        maxQuotes: 10
+      }
+    },
+    components: {
+      appQuoteGrid: QuoteGrid
     }
+  }
 </script>
 
 <style>
